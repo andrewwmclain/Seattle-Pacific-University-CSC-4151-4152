@@ -16,7 +16,8 @@ require('dotenv').config();
 /* GET home page. */
 router.get('/', /* oidc.ensureAuthenticated(),*/function(req, res, next) {
     // res.render('index', { title: 'Express' });
-    res.sendFile('homepage.html', {root: 'views'})
+    // res.sendFile('homepage.html', {root: 'views'})
+    res.render('homepage.html', {root: 'views', username: req.session.username});
 });
 
 module.exports = router;
